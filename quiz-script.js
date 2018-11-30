@@ -23,6 +23,20 @@ function loadQuestion(questionIndex) {
 
 }
 
+function skipQuestion() { 
+	currentQuestion++;
+	if(currentQuestion == totQuestions){
+		container.style.display = 'none';
+		resultCont.style.display = '';
+		resultCont.textContent = 'Your score: ' + score; 
+		return;
+	}
+	
+	loadQuestion(currentQuestion);
+
+
+}
+
 function loadNextQuestion() {
 	var selectedOption = document.querySelector('input[type=radio]:checked');
 	if(!selectedOption){
