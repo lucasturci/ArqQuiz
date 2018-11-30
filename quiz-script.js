@@ -1,6 +1,6 @@
 var currentQuestion = 0;
 var score = 0;
-var totQuestions = questions.lenght;
+var totQuestions = questions.length;
 
 var container = document.getElementById('quizContainer');
 var questionEl = document.getElementById('question');
@@ -44,6 +44,7 @@ function loadNextQuestion() {
 		resultCont.textContent = 'Your score: ' + score; 
 		return;
 	}
+	
 	loadQuestion(currentQuestion);
 
 

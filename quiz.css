@@ -1,6 +1,6 @@
 body{
 	font-family: 'Roboto Slab', serif;
-	background: #CFD7C3;
+	background: #9EC1A3;
 }
 
 .container{
@@ -65,7 +65,7 @@ body{
 
 
 .next-btn:hover{
-	background: #70A9A1;
+	background:  #40798C;
 	color: #f6f6f6;
 }
 
