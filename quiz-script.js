@@ -1,6 +1,3 @@
-var currentQuestion = 0;
-var score = 0;
-var totQuestions = questions.length;
 
 var container = document.getElementById('quizContainer');
 var questionEl = document.getElementById('question');
@@ -12,60 +9,24 @@ var opt4 = document.getElementById('opt4');
 var submitButton = document.getElementById('submitButton');
 var resultCont = document.getElementById('result');
 
-function loadQuestion(questionIndex) {
-	var q = questions[questionIndex];
-	questionEl.textContent = (questionIndex + 1) + '. ' + q.question;
+$(function() {
+	window.parent.window.frameLoaded(); // avisei o meu pai que eu estou carregado
+});
+
+function loadQuestion(question) {
+	
+	var request = new XMLHttpRequest();
+	request.open("GET", "questoes/" + question + ".json", false);
+	request.send(null);
+	var q = JSON.parse(request.responseText);
+	console.log(q);
+	questionEl.textContent = question + '. ' + q.question;
 	opt1.textContent = q.option1;
 	opt2.textContent = q.option2;
 	opt3.textContent = q.option3;
 	opt4.textContent = q.option4;
-	
-
 }
 
-function skipQuestion() { 
-	currentQuestion++;
-	if(currentQuestion == totQuestions){
-		container.style.display = 'none';
-		resultCont.style.display = '';
-		resultCont.textContent = 'Your score: ' + score; 
-		return;
-	}
+function isCorrect() {
 	
-	loadQuestion(currentQuestion);
-
-
 }
-
-function loadNextQuestion() {
-	var selectedOption = document.querySelector('input[type=radio]:checked');
-	if(!selectedOption){
-		alert('Selecione uma opcao!');
-		return;
-	}
-	var answer = selectedOption.options[selectedOption.selectedIndex].text;
-	alert(answer);
-	if(questions[currentQuestion].answer.localeCompare(answer)){
-		alert('RIGHT!');
-		score += 10;
-		return;
-	}else {
-		alert(answer);
-		return;
-	}
-	selectedOption.checked = false;
-	currentQuestion++;
-	
-	if(currentQuestion == totQuestions){
-		container.style.display = 'none';
-		resultCont.style.display = '';
-		resultCont.textContent = 'Your score: ' + score; 
-		return;
-	}
-	
-	loadQuestion(currentQuestion);
-
-
-}
-
-loadQuestion(currentQuestion);
