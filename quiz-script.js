@@ -9,7 +9,7 @@ var opt2 = document.getElementById('opt2');
 var opt3 = document.getElementById('opt3');
 var opt4 = document.getElementById('opt4');
 
-var nextButton = document.getElementById('nextButton');
+var submitButton = document.getElementById('submitButton');
 var resultCont = document.getElementById('result');
 
 function loadQuestion(questionIndex) {
@@ -26,18 +26,22 @@ function loadQuestion(questionIndex) {
 function loadNextQuestion() {
 	var selectedOption = document.querySelector('input[type=radio]:checked');
 	if(!selectedOption){
-		alert('Please select your answer!');
+		alert('Selecione uma opcao!');
 		return;
 	}
-	var answer = selectedOption.value;
-	if(questions[currentQuestion].answer == answer){
+	var answer = selectedOption.options[selectedOption.selectedIndex].text;
+	alert(answer);
+	if(questions[currentQuestion].answer.localeCompare(answer)){
+		alert('RIGHT!');
 		score += 10;
+		return;
+	}else {
+		alert(answer);
+		return;
 	}
 	selectedOption.checked = false;
 	currentQuestion++;
-	if(currentQuestion == totQuestions - 1){
-		nextButton.textContent = 'Finish';
-	}
+	
 	if(currentQuestion == totQuestions){
 		container.style.display = 'none';
 		resultCont.style.display = '';

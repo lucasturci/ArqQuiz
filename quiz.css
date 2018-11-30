@@ -50,7 +50,7 @@ body{
 	color: #f6f6f6;
 }
 
-.next-btn{
+.submit-btn{
 	border: none;
 	outline: none;
 	background: rgba(255,255,255,0.5);
@@ -64,7 +64,7 @@ body{
 }
 
 
-.next-btn:hover{
+.submit-btn:hover{
 	background:  #40798C;
 	color: #f6f6f6;
 }
