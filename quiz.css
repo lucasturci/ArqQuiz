@@ -4,7 +4,7 @@ body{
 }
 
 .container{
-	height: 800px;
+	height: 700px;
 	width: 1000px;
 	position: absolute;
 	top: 50%;
@@ -51,7 +51,7 @@ body{
 }
 
 .next-btn{
-	border:none;
+	border: none;
 	outline: none;
 	background: rgba(255,255,255,0.5);
 	width: 100px;
@@ -59,7 +59,7 @@ body{
 	border-radius: 20px;
 	cursor: pointer;
 	float: right;
-	margin: 400px;
+	margin: 0px;
 
 }
 
