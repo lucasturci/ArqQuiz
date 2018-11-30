@@ -14,6 +14,11 @@
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
+		<script type="text/javascript">
+			function fazerTeste() {
+				document.getElementById('frame').contentWindow.alerta();
+			}
+		</script>
 		
 		<style type="text/css">
 			body {
@@ -86,6 +91,8 @@
 				</div>	
 			</a>
 		</center>
+		<button onclick="fazerTeste()"> Teste </button>
+		<iframe src="./teste.html" width="500px" height="500px" id="frame"></iframe>
 		
 		
 
