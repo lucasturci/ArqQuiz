@@ -8,6 +8,7 @@ var opt4 = document.getElementById('opt4');
 
 var submitButton = document.getElementById('submitButton');
 var resultCont = document.getElementById('result');
+var q = null;
 
 $(function() {
 	window.parent.window.frameLoaded(); // avisei o meu pai que eu estou carregado
@@ -18,7 +19,7 @@ function loadQuestion(question) {
 	var request = new XMLHttpRequest();
 	request.open("GET", "questoes/" + question + ".json", false);
 	request.send(null);
-	var q = JSON.parse(request.responseText);
+	q = JSON.parse(request.responseText);
 	console.log(q);
 	questionEl.textContent = question + '. ' + q.question;
 	opt1.textContent = q.option1;
@@ -28,5 +29,9 @@ function loadQuestion(question) {
 }
 
 function isCorrect() {
-	
+	var selectedOption = document.querySelector('input[type=radio]:checked');
+	if(!selectedOption) return "Selecione uma opcao";
+	var x = selectedOption.value;
+	if(q.answer == x) return "OK";
+	else return "WA";
 }

@@ -5,9 +5,12 @@ $(function() {
 
 var currentQuestion = 0;
 var score = 0;
+var frame = null;
+
+
 
 function frameLoaded() {
-	var frame = document.getElementById('frame');
+	frame = document.getElementById('frame');
 	frame.contentWindow.loadQuestion("1"); // loada a questao do quiz
 }
 
@@ -65,4 +68,6 @@ function pular() {
 
 function submeter() {
 	console.log("Submeter");
+	var ret = frame.contentWindow.isCorrect();
+	alert(ret);
 }
