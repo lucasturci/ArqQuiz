@@ -1,10 +1,10 @@
 body{
-	font-family: 'Roboto Slab', serif;
-	background: #CFD7C3;
+	font-family: 'Neucha', serif;
+	background: #9EC1A3;
 }
 
 .container{
-	height: 800px;
+	height: 700px;
 	width: 1000px;
 	position: absolute;
 	top: 50%;
@@ -51,7 +51,7 @@ body{
 }
 
 .next-btn{
-	border:none;
+	border: none;
 	outline: none;
 	background: rgba(255,255,255,0.5);
 	width: 100px;
@@ -59,13 +59,33 @@ body{
 	border-radius: 20px;
 	cursor: pointer;
 	float: right;
-	margin: 400px;
+	margin-top: 20px;
 
 }
 
 
 .next-btn:hover{
-	background: #70A9A1;
+	background:  #40798C;
+	color: #f6f6f6;
+}
+
+
+.skip-btn{
+	border: none;
+	outline: none;
+	background: rgba(255,255,255,0.5);
+	width: 100px;
+	height: 35px;
+	border-radius: 20px;
+	cursor: pointer;
+	float: right;
+	margin-right: 10px;
+	margin-top: 20px;
+}
+
+
+.skip-btn:hover{
+	background:  #40798C;
 	color: #f6f6f6;
 }
 
