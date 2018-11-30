@@ -5,12 +5,14 @@ var curQuestion = 0;
 var score = 0;
 var frame = null;
 
-var questoes = [{type: "questao", id: 1}, {type: "questao", id: 2}];
+var questoes = [{type: "questao", id: 1}, {type: "questao", id: 2}, {type: "questao", id: 3}, {type: "questao", id: 4}];
 
 
 function loadFase() {
 	var fase = questoes[curQuestion];
 	console.log(frame);
+	console.log(curQuestion);
+	console.log(fase.type);
 	if(fase.type == "questao") $("#frame").attr("src", "quiz.html");
 	else $("#frame").attr("src", "jogos/" + fase.id.toString() + ".html");
 }
@@ -21,7 +23,7 @@ $(function() {
 });
 
 function frameLoaded() {	
-	var fase = questoes[0];
+	var fase = questoes[curQuestion];
 	
 	if(fase.type == "questao") frame.contentWindow.loadQuestion(fase.id.toString()); // loada a questao do quiz
 }
@@ -79,7 +81,8 @@ function nextQuestion() {
 
 function pular() {
 	console.log("Pular");
-	
+	curQuestion++;
+	loadFase();
 }
 
 function submeter() {
@@ -92,5 +95,7 @@ function submeter() {
 		loadFase();
 	} else if(ret == "WA") { 
 		// vai pra pagina do gif do pc explodindo
+	} else if(ret == "Selecione uma opcao") { 
+		alert("Nenhuma opção selecionada")
 	}
 }

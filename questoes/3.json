@@ -1,0 +1,10 @@
+{
+	"question": 
+	"Considerando o mesmo código\nI0: div $t2, $t5, $t8\nI1: sub $t9, $t2, $t7\nI2: sll $t5, $a0, 2\nI3: mul $a1, $t9, $t5\nI4: beq $t2, $a1, 100\nI5: or $t8, $t5, $t2\nQuantos hazards existem e quantos deles são dependências verdadeiras?",
+	"option1": "3 e 4, respectivamente",
+	"option2": "4 e 4, respectivamente",
+	"option3": "4 e 5, respectivamente",
+	"option4": "5 e 4, respectivamente",
+	
+	"answer": "2"
+}
