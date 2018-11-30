@@ -43,8 +43,9 @@ function loadNextQuestion() {
 		alert('Please select your answer!');
 		return;
 	}
-	var answer = selectedOption.value;
-	if(questions[currentQuestion].answer == answer){
+	var answer = document.querySelector('input[type=radio]:checked').value;
+	console.log(answer);
+	if(questions[currentQuestion].answer === answer){
 		score += 10;
 	}
 	selectedOption.checked = false;

@@ -6,7 +6,7 @@ var questions = [{
 		"option3": "Superescalar",
 		"option4": "Paralelismo de Threads",
 		
-		"answer": "Pipeline"
+		"answer": "1"
 	}, 	{
 		"question": "What is 30/3?",
 		
@@ -15,6 +15,6 @@ var questions = [{
 		"option3": "10",
 		"option4": "11",
 		
-		"answer": "10"
+		"answer": "3"
 	}
 	];

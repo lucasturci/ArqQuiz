@@ -60,7 +60,8 @@ body{
 	cursor: pointer;
 	float: right;
 	margin-top: 20px;
-
+	font-family:Neucha;
+	font-size:15pt;
 }
 
 
@@ -81,6 +82,8 @@ body{
 	float: right;
 	margin-right: 10px;
 	margin-top: 20px;
+	font-family:Neucha;
+	font-size:15pt;
 }
 
 
