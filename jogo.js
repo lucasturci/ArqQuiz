@@ -5,7 +5,7 @@ var curQuestion = 0;
 var score = 0;
 var frame = null;
 
-var questoes = [{type: "jogo", id: 1}, {type: "questao", id: 1}, {type: "questao", id: 2}, {type: "questao", id: 3}, {type: "questao", id: 4}, {type: "questao", id: 5},  {type: "questao", id: 6}];
+var questoes = [{type: "jogo", id: 2}, {type: "jogo", id: 1}, {type: "questao", id: 1}, {type: "questao", id: 2}, {type: "questao", id: 3}, {type: "questao", id: 4}, {type: "questao", id: 5},  {type: "questao", id: 6}];
 
 
 function loadFase() {
@@ -98,5 +98,7 @@ function submeter() {
 		// vai pra pagina do gif do pc explodindo
 	} else if(ret == "Selecione uma opcao") { 
 		alert("Nenhuma opção selecionada")
+	} else {
+		alert(ret);
 	}
 }

@@ -16,6 +16,10 @@ body{
 	box-shadow: 0 0 8px 3px #fff;
 }
 
+.big {
+	height: 1050px;
+}
+
 .title{
 	padding-top: 20px;
 	text-align: center;
@@ -36,6 +40,18 @@ body{
 }
 
 .option{
+	width:470px;
+	display: inline-block;
+	padding: 10px 0 10px 15px;
+	vertical-align: middle;
+	background: rgba(255, 255, 255, 0.5);
+	margin: 10px 0 10px 10px;
+	color: #000000;
+	border-radius: 20px;
+	white-space: pre-line;
+}
+
+.option-radio {
 	width:470px;
 	display: inline-block;
 	padding: 10px 0 10px 15px;
