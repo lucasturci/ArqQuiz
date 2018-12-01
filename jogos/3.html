@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		
+		<title>Quiz</title>
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Neucha" rel="stylesheet"> 
+		<!--<link href = "https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">-->
+		<link href="../quiz.css" rel="stylesheet">
+		<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript">
+		</script>
+	</head>	
+	<body>
+		<div id="quizContainer" class="container big">
+			<div class="title">Computer Quiz</div>
+			<div id="question" class="question">
+				<p>Considerando o mesmo código
+					I1)	lw	$t1, 0($t0)
+					I2)	lw	$t2, 4($t0)
+					I3)	add	$t3, $t1, $t2
+					I4)	sw	$t3, 12($t0)
+					I5)	lw	$t4, 8($t0)
+					I6)	add	$t5, $t1, $t4
+					I7)	sw	$t5, 16($t0)
+					Agora, para executá-lo em uma arquitetura com pipeline tradicional de 5 estágios com forwarding total, quantas instruções nop seria necessário inserir após cada instrução do código?
+				</p>
+			</div>
+			<label class="option-radio">
+				<span>I1)	lw	$t1, 0($t0)</span>
+				<br/>
+				<input type="radio" name="opt1" value="0"/><span>0</span><input type="radio" name="opt1" value="1"/><span>1</span><input type="radio" name="opt1" value="2"/><span>2</span>
+			</label>
+			<label class="option-radio">
+				<span>I2)	lw	$t2, 4($t0)</span>
+				<br/>
+				<input type="radio" name="opt2" value="0"/><span>0</span><input type="radio" name="opt2" value="1"/><span>1</span><input type="radio" name="opt2" value="2"/><span>2</span>
+			</label>
+			<label class="option-radio">
+				<span>I3)	add	$t3, $t1, $t2</span>
+				<br/>
+				<input type="radio" name="opt3" value="0"/><span>0</span><input type="radio" name="opt3" value="1"/><span>1</span><input type="radio" name="opt3" value="2"/><span>2</span>
+			</label>
+			<label class="option-radio">
+				<span>I4)	sw	$t3, 12($t0)</span>
+				<br/>
+				<input type="radio" name="opt4" value="0"/><span>0</span><input type="radio" name="opt4" value="1"/><span>1</span><input type="radio" name="opt4" value="2"/><span>2</span>
+			</label>
+			<label class="option-radio">
+				<span>I5)	lw	$t4, 8($t0)</span>
+				<br/>
+				<input type="radio" name="opt5" value="0"/><span>0</span><input type="radio" name="opt5" value="1"/><span>1</span><input type="radio" name="opt5" value="2"/><span>2</span>
+			</label>
+			<label class="option-radio">
+				<span>I6)	add	$t5, $t1, $t4</span>
+				<br/>
+				<input type="radio" name="opt6" value="0"/><span>0</span><input type="radio" name="opt6" value="1"/><span>1</span><input type="radio" name="opt6" value="2"/><span>2</span>
+			</label>
+			<label class="option-radio">
+				<span>I7)	sw	$t5, 16($t0)</span>
+				<br/>
+				<input type="radio" name="opt7" value="0"/><span>0</span><input type="radio" name="opt7" value="1"/><span>1</span><input type="radio" name="opt7" value="2"/><span>2</span>
+			</label>
+		</div>
+		<div id="result" class="container result" style="display:none;">
+		</div>
+		<script>
+			function isCorrect() {
+				var selectedOption = document.querySelector('input[name="opt1"]:checked');
+				if(!selectedOption) return "Selecione uma opção do item 1";
+				var opt1 = selectedOption.value;
+				selectedOption = document.querySelector('input[name="opt2"]:checked');
+				if(!selectedOption) return "Selecione uma opção do item 2";
+				var opt2 = selectedOption.value;
+				selectedOption = document.querySelector('input[name="opt3"]:checked');
+				if(!selectedOption) return "Selecione uma opção do item 3";
+				var opt3 = selectedOption.value;
+				selectedOption = document.querySelector('input[name="opt4"]:checked');
+				if(!selectedOption) return "Selecione uma opção do item 4";
+				var opt4 = selectedOption.value;
+				selectedOption = document.querySelector('input[name="opt5"]:checked');
+				if(!selectedOption) return "Selecione uma opção do item 5";
+				var opt5 = selectedOption.value;
+				selectedOption = document.querySelector('input[name="opt6"]:checked');
+				if(!selectedOption) return "Selecione uma opção do item 6";
+				var opt6 = selectedOption.value;
+				selectedOption = document.querySelector('input[name="opt7"]:checked');
+				if(!selectedOption) return "Selecione uma opção do item 7";
+				var opt7 = selectedOption.value;
+				
+				if (opt1 == '0' && opt2 == '1' && opt3 == '0' && opt4 == '0' && opt5 == '1' && opt6 == '0' && opt7 == '0') return "OK";
+				else return "WA";
+
+			}
+		</script>
+	</body>
+</html>	
