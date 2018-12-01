@@ -13,14 +13,14 @@ $(function() {
 	window.parent.window.frameLoaded(); // avisei o meu pai que eu estou carregado
 });
 
-function loadQuestion(question) {
+function loadQuestion(question, curQuestion) {
 	
 	var request = new XMLHttpRequest();
 	request.open("GET", "questoes/" + question + ".json", false);
 	request.send(null);
 	q = JSON.parse(request.responseText);
 	console.log(q);
-	questionEl.textContent = question + '. ' + q.question;
+	questionEl.textContent = curQuestion + '. ' + q.question;
 	opt1.textContent = q.option1;
 	opt2.textContent = q.option2;
 	opt3.textContent = q.option3;

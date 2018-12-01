@@ -5,7 +5,7 @@ var curQuestion = 0;
 var score = 0;
 var frame = null;
 
-var questoes = [{type: "questao", id: 1}, {type: "questao", id: 2}, {type: "questao", id: 3}, {type: "questao", id: 4}, {type: "questao", id: 5},  {type: "questao", id: 6}];
+var questoes = [{type: "jogo", id: 1}, {type: "questao", id: 1}, {type: "questao", id: 2}, {type: "questao", id: 3}, {type: "questao", id: 4}, {type: "questao", id: 5},  {type: "questao", id: 6}];
 
 
 function loadFase() {
@@ -25,7 +25,7 @@ $(function() {
 function frameLoaded() {	
 	var fase = questoes[curQuestion];
 	
-	if(fase.type == "questao") frame.contentWindow.loadQuestion(fase.id.toString()); // loada a questao do quiz
+	if(fase.type == "questao") frame.contentWindow.loadQuestion(fase.id.toString(), curQuestion); // loada a questao do quiz
 }
 
 /*
@@ -94,6 +94,7 @@ function submeter() {
 		score += 10;
 		loadFase();
 	} else if(ret == "WA") { 
+		console.log("Errou");
 		// vai pra pagina do gif do pc explodindo
 	} else if(ret == "Selecione uma opcao") { 
 		alert("Nenhuma opção selecionada")

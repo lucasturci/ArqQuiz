@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		
+		<title>Quiz</title>
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Neucha" rel="stylesheet"> 
+		<!--<link href = "https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">-->
+		<link href="../quiz.css" rel="stylesheet">
+		<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript">
+		</script>
+	</head>	
+	<body>
+		<div id="quizContainer" class="container">
+			<div class="title">Computer Quiz</div>
+			<div id="question" class="question">
+				<p>I0: div $t2, $t5, $t8
+					I1: sub $t9, $t2, $t7
+					I2: sll $t5, $a0, 2
+					I3: mul $a1, $t9, $t5
+					I4: beq $t2, $a1, 100 
+					I5: or	$t8, $t5, $t2
+					Considerando o código acima, se ele for executado da maneira como está, selecione abaixo o(s) problema(s) causados pelas dependências falsas:
+				</p>
+			</div>
+			<label class="option"><input type="checkbox" name="option" value="1" id="opt1"/> <span>O código demorará mais para ser executado</span></label>	
+			<label class="option"><input type="checkbox" name="option" value="2" id="opt2"/> <span>Haverá acesso indevido de memória</span></label>
+			<label class="option"><input type="checkbox" name="option" value="3" id="opt3"/> <span>O código dará um resultado diferente do esperado</span></label>
+		</div>
+		<div id="result" class="container result" style="display:none;">
+		</div>
+		<script>
+			function isCorrect() {
+				var opt1 = document.getElementById("opt1").checked;
+				var opt2 = document.getElementById("opt2").checked;
+				var opt3 = document.getElementById("opt3").checked;
+
+				if (opt1 || opt2 || opt3) return "WA";
+				return "OK";
+			}
+		</script>
+	</body>
+</html>	
