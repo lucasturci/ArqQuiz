@@ -1,4 +1,3 @@
 {
-	"title": "Qual a opção que lista todas as dependências verdadeiras?\n$t5\nI2 -> I3\nI2 -> I5!",
-	"explanation": "Na primeira opção, não existe a dependência ($a0)I2 -> I4\nNa segunda opção, falta a dependência ($t2)I0 -> I5\nE, na última, não existe a dependência ($t9)I3 -> I4"
+	"explanation": "Na primeira opção, não existe a dependência ($a0)I2 -> I4\nNa segunda opção, falta a dependência ($t2)I0 -> I5\nA terceira opção é a correta! Ela lista todas as dependências verdadeiras relativas a esse registrador.\nE, na última, não existe a dependência ($t9)I3 -> I4"
 }
