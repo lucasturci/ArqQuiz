@@ -1,0 +1,4 @@
+{
+	"title": "Quantos hazards existem e quantos deles são dependências verdadeiras?\n4 e 4!",
+	"explanation": "Qualquer hazard é, também, uma dependência verdadeira.\nNesse caso, são eles:\n($a0)I3 -> I4\n($t2)I0 -> I1\n($t5)I2 -> I3\n($t9)I1 -> I3"
+}
