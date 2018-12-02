@@ -63,6 +63,10 @@
 				background:  #40798C;
 				color: #f6f6f6;
 			}
+
+			#modal {
+				white-space: pre-line;
+			}
 			
 			footer { 
 				font-size: 15px;
@@ -72,8 +76,24 @@
 
 	</head>
 	<body>
+
 		<center>
 			<iframe id = "frame" src="quiz.html"></iframe>
+
+			<div id="modal" class="modal-dialog" hidden="hidden">
+				<div class="modal-content" style="width: 60%;">
+					<div class="modal-header">
+				    	<h2 id="title" style="color: black"></h2>
+					</div>
+					<div class="modal-body"><h4 id="modal-body" style="color: black"></h4>
+						
+					</div>
+					<div class="modal-footer" id="modal-footer">
+						<button class="btn btn-success" onclick="closeModal()">Entendi!</button>
+					</div>
+				</div> 
+			</div>
+
 			<div id = "submit">
 				<button id="submit_button" class = "button" onclick="submeter()" > SUBMETER </button>
 				<button id="skip_button" class = "button" onclick="pular()" > PULAR </button>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		
+		<title>Quiz</title>
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Neucha" rel="stylesheet"> 
+		<!--<link href = "https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">-->
+		<link href="../quiz.css" rel="stylesheet">
+		<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript">
+		</script>
+	</head>	
+	<body>
+		<div id="quizContainer" class="container">
+			<div class="title">Computer Quiz</div>
+			<div id="question" class="question">
+			Qual a correta representação da máquina de estados finitos para o Previsor de 2 bits de Dependências de Controle?
+			T para Taken e NT para Not Taken
+			</div>
+			<label class="option"><input type="radio" name="opt" value="1"/><span><img src="./imagens/7-3.png" height="190"></span></label>
+			<label class="option"><input type="radio" name="opt" value="2"/><span><img src="./imagens/7-2.png" height="190"></span></label>
+			<label class="option"><input type="radio" name="opt" value="3"/><span><img src="./imagens/7-4.png" height="190"></span></label>
+			<label class="option"><input type="radio" name="opt" value="4"/><span><img src="./imagens/7-1.png" height="190"></span></label>
+		</div>
+		<div id="result" class="container result" style="display:none;">
+		</div>
+		<script>
+			function isCorrect() {
+				var selectedOption = document.querySelector('input[name="opt"]:checked');
+				if(!selectedOption) return "Selecione uma opcao";
+				
+				if (selectedOption.value == '4') return "OK";
+				else return "WA";
+
+			}
+		</script>
+	</body>
+</html>	

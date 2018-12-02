@@ -3,7 +3,7 @@ var score = 0;
 var frame = null;
 var butPular, butSubmeter;
 
-var questoes = [{type: "jogo", id: 4}, {type: "jogo", id: 2}, {type: "jogo", id: 3}, {type: "jogo", id: 1}, {type: "questao", id: 1}, {type: "questao", id: 2}, {type: "questao", id: 3}, {type: "questao", id: 4}, {type: "questao", id: 5},  {type: "questao", id: 6}];
+var questoes = [{type: "questao", id: 1}, {type: "questao", id: 1}, {type: "questao", id: 1}, {type: "questao", id: 1}, {type: "questao", id: 2}, {type: "questao", id: 3}, {type: "questao", id: 4}, {type: "jogo", id: 1}, {type: "jogo", id: 2}, {type: "jogo", id: 3}, {type: "jogo", id: 4}, {type: "questao", id: 5},  {type: "questao", id: 6}, {type: "jogo", id: 5}];
 
 
 function loadFase() {
@@ -41,7 +41,7 @@ function tryAgain() {
 function pular() {
 	console.log("Pular");
 	curQuestion++;
-	loadFase();
+	openModal(curQuestion, 0);
 }
 
 function submeter() {
@@ -51,7 +51,8 @@ function submeter() {
 	if(ret == "OK") { //passa de fase
 		curQuestion++;
 		score += 10;
-		loadFase();
+		openModal(curQuestion, 1);
+//		loadFase();
 	} else if(ret == "WA") { 
 		console.log("Errou");
 		$("#submit_button").css("visibility", "hidden");
@@ -63,3 +64,30 @@ function submeter() {
 		alert(ret);
 	}
 }
+
+function openModal(curQuestion, acertou) {
+	document.getElementById("frame").hidden = "hidden";
+
+	var request = new XMLHttpRequest();
+	request.open("GET", "respostas/" + curQuestion + ".json", false);
+	request.send(null);
+	q = JSON.parse(request.responseText);
+
+	if (acertou) document.getElementById("title").textContent = "Parabéns!! Você acaba de ganhar mais 10 pontos =D\nConfere aqui embaixo se seu raciocínio foi igual ao nosso!";
+	else document.getElementById("title").textContent = "Poxa, que pena que você desistiu dessa pergunta =(\nMas então dá uma olhadinha aqui na nossa explicação pra ela!";
+
+	document.getElementById("modal-body").textContent = q.explanation;
+
+	document.getElementById("modal").hidden = "";
+	document.getElementById("submit_button").hidden = "hidden";
+	document.getElementById("skip_button").hidden = "hidden";
+}
+
+function closeModal() {
+	document.getElementById("frame").hidden = "";
+	document.getElementById("modal").hidden = "hidden";
+
+	document.getElementById("submit_button").hidden = "";
+	document.getElementById("skip_button").hidden = "";
+	loadFase();
+} 
