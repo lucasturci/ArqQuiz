@@ -1,0 +1,10 @@
+{
+	"question": 
+	"Escolha um exemplo de situação em que existe despacho múltiplo estático",
+	"option1": "Arquitetura que implementa o algoritmo de ScoreBoard",
+	"option2": "Processamento superescalar com 4 unidades de operação de ponto flutuante",
+	"option3": "Compilador que junta várias instruções em uma única longa instrução (VLIW)",
+	"option4": "Arquitetura que implementa o algorito de Tomasulo",
+	
+	"answer": "3"
+}
