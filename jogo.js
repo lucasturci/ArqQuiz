@@ -25,51 +25,6 @@ function frameLoaded() {
 	if(fase.type == "questao") frame.contentWindow.loadQuestion(fase.id.toString(), curQuestion); // loada a questao do quiz
 }
 
-/*
-
-function skipQuestion() { 
-	currentQuestion++;
-	if(currentQuestion == totQuestions){
-		container.style.display = 'none';
-		resultCont.style.display = '';
-		resultCont.textContent = 'Your score: ' + score; 
-		return;
-	}
-	
-	loadQuestion(currentQuestion);
-
-
-}
-
-function loadNextQuestion() {
-	var selectedOption = document.querySelector('input[type=radio]:checked');
-	if(!selectedOption){
-		alert('Selecione uma opcao!');
-		return;
-	}
-	var answer = selectedOption.options[selectedOption.selectedIndex].text;
-	if(questions[currentQuestion].answer.localeCompare(answer)){
-		return;
-	}else {
-		return;
-	}
-	selectedOption.checked = false;
-	currentQuestion++;
-	
-	if(currentQuestion == totQuestions){
-		container.style.display = 'none';
-		resultCont.style.display = '';
-		resultCont.textContent = 'Your score: ' + score; 
-		return;
-	}
-	
-	loadQuestion(currentQuestion);
-
-
-}
-* */
-
-//loadQuestion(currentQuestion);
 
 function nextQuestion() {
 	curQuestion++;
@@ -93,7 +48,7 @@ function submeter() {
 //		loadFase();
 	} else if(ret == "WA") { 
 		console.log("Errou");
-		// vai pra pagina do gif do pc explodindo
+		$("#frame").attr("src", "./wrong/wrong2.html");
 	} else if(ret == "Selecione uma opcao") { 
 		alert("Nenhuma opção selecionada")
 	} else {
