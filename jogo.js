@@ -18,7 +18,8 @@ var questoes = [
 	{type: "questao", id: 5},  
 	{type: "questao", id: 6}, 
 	{type: "jogo", id: 5},
-	{type: "jogo", id: 6}
+	{type: "jogo", id: 6},
+	{type: "jogo", id: 7}
 ];
 
 
