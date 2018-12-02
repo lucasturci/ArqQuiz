@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		
+		<title>Jogo do Lucas </title>
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Neucha" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet"> 
+		<link href="../quiz.css" rel="stylesheet">
+		<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		
+		<style type="text/css">
+			
+			li {
+				list-style-type: none;
+				font-family: 'Roboto Mono', monospace;
+			}
+			.instrucao {
+				margin-top: 10px;
+				margin-left: 20px;
+				padding-top: 10px;
+				padding-left: 30px;
+				width: 300px;
+				background-color: white;
+				border-radius: 10px;
+				cursor: move;
+				height: 30px;
+				selectable: false;
+			}
+		</style>
+	</head>	
+	<body>
+		<div id="quizContainer" class="container">
+			<div class="title">Arq Quiz</div>
+			<div id="question" class="question"> Considerando que as instruções abaixo são executadas em uma arquitetura MIPS com pipeline sem forwarding, reordene-as de forma a reduzir o número de NOPS que seriam inseridos</div>
+			
+			<div style="margin-top: 40px"></div>
+			<ul id="sortable">
+				<li class="instrucao" id="1"> <b>1.</b> a = b + c </li>
+				<li class="instrucao" id="2"> <b>2.</b> c = 10 </li>
+				<li class="instrucao" id="3"> <b>3.</b> f = a - e </li>
+				<li class="instrucao" id="4"> <b>4.</b> h = 20 </li>
+				<li class="instrucao" id="5"> <b>5.</b> d = f * h </li>
+				<li class="instrucao" id="6"> <b>6.</b> b = 1 </li>
+				<li class="instrucao" id="7"> <b>7.</b> b = d + 1 </li>
+				<li class="instrucao" id="8"> <b>8.</b> g = 0 </li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			
+			var raw, e;
+			
+			$(function() {
+				var container = document.getElementById('quizContainer');
+				$("#sortable").sortable();
+				
+				var items = $( "#sortable" ).sortable( "toArray" );
+				for(var i = 0; i < items.length; ++i) items[i] = parseInt(items[i]);
+				
+				raw = [], e = [];
+				for(var i = 1; i <= items.length; ++i) {
+					raw[i] = [];
+					e[i] = [];
+				}
+				
+				/* Dependencias verdadeiras RAW: quer dizer que 3 depende de 1*/
+				raw[3].push(1);
+				raw[5].push(3);
+				raw[5].push(4);
+				raw[7].push(5);
+				
+				/* Dependencias falsas: quer dizer que 2 depende de 1 (tipo topo-sort)*/
+				e[1].push(2);
+				e[1].push(6);
+				e[1].push(3);
+				e[3].push(5);
+				e[4].push(5);
+				e[5].push(7);
+				e[6].push(7);
+			});
+			
+			function debug() {
+				console.log(valid());
+			}
+			
+			function valid() {
+				var items = $( "#sortable" ).sortable( "toArray" );
+				for(var i = 0; i < items.length; ++i) items[i] = parseInt(items[i]);
+				
+				var vis = [];
+				for(var i = 0; i <= 10; ++i) vis[i] = 0; // memset com 0
+				
+				var tot = 0, k = 1;
+				for(var i = 0; i < items.length; ++i) {
+					var x = items[i];
+					console.log(x);
+					vis[x] = k++;
+					for(var j = 0; j < e[x].length; ++j) {
+						var y = e[x][j];
+						if(vis[y]) return false;
+					}
+					
+					var nops = 0;
+					for(var j = 0; j < raw[x].length; ++j) {
+						var y = raw[x][j];
+						if(vis[x] - vis[y] == 1) nops = 2;
+						else if(nops < 2 && vis[x] - vis[y] == 2) nops = 1;
+					}
+					tot += nops;
+				}
+				
+				for(var i = 1; i <= 8; ++i) console.log("vis[i] = " + vis[i]);
+				
+				if(tot == 2) return true;
+				else return false;
+			}
+
+			function isCorrect() {
+				if(valid()) return "OK";
+				else return "WA";
+			}
+	
+		</script>
+	</body>
+</html>	
