@@ -120,3 +120,11 @@ body{
 	background: #08038C;
 	color: #000;
 }
+
+.hidden-radio {
+	display: none;
+}
+
+.hidden-radio:checked {
+	display: inline-block;
+}

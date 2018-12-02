@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		
+		<title>Quiz</title>
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Neucha" rel="stylesheet"> 
+		<!--<link href = "https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">-->
+		<link href="../quiz.css" rel="stylesheet">
+		<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript">
+		</script>
+	</head>	
+	<body>
+		<div id="quizContainer" class="container">
+			<div class="title">Computer Quiz</div>
+			<div id="question" class="question">Considerando o mesmo código das questões anteriores:
+				I1)	lw	$t1, 0($t0)
+				I2)	lw	$t2, 4($t0)
+				I3)	add	$t3, $t1, $t2
+				I4)	sw	$t3, 12($t0)
+				I5)	lw	$t4, 8($t0)
+				I6)	add	$t5, $t1, $t4
+				I7)	sw	$t5, 16($t0)
+				Se cada ciclo de clock tem duração de <input class="hidden-radio" type="radio" name="opt" id="opt6" value="6"><label for="opt6"><span>6</span></label> ns, quantos ciclos de clock economizamos com o forwarding?
+			</div>
+			<label class="option"><input type="radio" name="opt" value="2"/><span>2</span></label>
+			<label class="option"><input type="radio" name="opt" value="3"/><span>3</span></label>
+			<label class="option"><input type="radio" name="opt" value="4"/><span>4</span></label>
+			<label class="option"><input type="radio" name="opt" value="5"/><span>5</span></label>
+		</div>
+		<div id="result" class="container result" style="display:none;">
+		</div>
+		<script>
+			function isCorrect() {
+				var selectedOption = document.querySelector('input[name="opt"]:checked');
+				if(!selectedOption) return "Selecione uma opcao";
+				
+				if (selectedOption.value == '6') return "OK";
+				else return "WA";
+
+			}
+		</script>
+	</body>
+</html>	
