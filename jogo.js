@@ -4,6 +4,7 @@ var frame = null;
 var butPular, butSubmeter;
 
 var questoes = [
+/*19*/  {type: "jogo", id: 10},
 /*1*/	{type: "questao", id: 1}, 
 /*2*/	{type: "questao", id: 2}, 
 /*3*/	{type: "questao", id: 1}, 
@@ -20,7 +21,8 @@ var questoes = [
 /*14*/	{type: "jogo", id: 5},
 /*15*/	{type: "jogo", id: 6},
 /*16*/	{type: "jogo", id: 7},
-/*17*/	{type: "jogo", id: 8}
+/*17*/	{type: "jogo", id: 8},
+/*18*/  {type: "jogo", id: 9}
 ];
 
 

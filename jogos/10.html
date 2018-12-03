@@ -86,7 +86,7 @@
 				</div>
 				<div class="col-7">
 					<center>
-						<table style="margin-top: 10px;">
+						<table id="my_table" style="margin-top: 10px;">
 							<tr>
 								<th> </th>
 								<th> ISSUE </th>
@@ -162,30 +162,38 @@
 				}
 
 				$('.entry').keypress(function (e) {
-					var str = e.target.textContent;
-					str.trim();
-					if(str.length > 4) {
+					var s = e.target.textContent;
+					s.trim();
+					if(s.length > 4) {
 						e.preventDefault();
 						return false;
 					}
 					if(e.keyCode == 8) return true;
 				    var regex = new RegExp("^[0-9]+$");
 				    var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
-				    if (regex.test(str)) return true;
+				    if (regex.test(str)) {
+				    	return true;
+				    }
 
 				    e.preventDefault();
 				    return false;
 				});
 
+				if(localStorage.getItem("table")) {
+					$("#my_table").html(localStorage.getItem("table"));
+				}
 			});
 			
 
 			function isCorrect() {
+				localStorage.setItem("table", $("#my_table").html());
 				var tds = document.getElementsByClassName("entry");
 				for(var i = 0; i < tds.length; ++i) {
+					var el = tds[i];
 					if(el.textContent.trim().length == 0) return "Preencha todos os campos!";
 				}
 				for(var i = 0; i < tds.length; ++i) {
+					var el = tds[i];
 					if(parseInt(el.textContent.trim()) != ans[i]) return "WA";
 				}
 				return "OK";
