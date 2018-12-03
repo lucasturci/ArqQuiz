@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		
+		<title>Jogo do Lucas </title>
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Neucha" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet"> 
+		
+
+		
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link href="../quiz.css" rel="stylesheet">
+		
+		<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<style type="text/css">
+			
+			
+			.not-selectable {
+				user-select: none;
+				-moz-user-select: none;
+				-khtml-user-select: none;
+				-webkit-user-select: none;
+				-o-user-select: none;
+			}
+			
+			li {
+				list-style-type: none;
+				font-family: 'Roboto Mono', monospace;
+			}
+			.instrucao {
+				margin-top: 10px;
+				margin-left: 20px;
+				padding-top: 5px;
+				padding-left: 30px;
+				width: 300px;
+				background-color: white;
+				border-radius: 10px;
+				height: 30px;
+				selectable: false;
+			}
+			
+			.label {
+				cursor: pointer;
+				display: inline-block;
+				//border: solid 1px black;
+
+			}
+			
+			
+			#F0 {
+				position: relative;
+				top: 120px;
+				left: 80px;
+				transform: rotate(20deg);
+				font-size: 22pt;
+			}
+			
+			#F2 {
+				position: relative;
+				top: 150px;
+				left: 150px;
+				transform: rotate(-20deg);
+				font-size: 25pt;
+			}
+			
+			#F4 {
+				position: relative;
+				top: 100px;
+				left: 150px;
+				transform: rotate(10deg);
+				font-size: 30pt;
+			}
+			
+			#F6 {
+				position: relative;
+				top: -90px;
+				left: 250px;
+				color: #222222;
+				transform: rotate(-10deg);
+				font-size: 10pt;
+				
+			}
+			
+			#F8 {
+				position: relative;
+				top: 200px;
+				left: 12px;
+				transform: rotate(-10deg);
+				font-size: 30pt;
+			}
+			
+			#F10 {
+				position: relative;
+				top: 160px;
+				left: 120px;
+				transform: rotate(5deg);
+				font-size: 35pt;
+			}
+
+		</style>
+	</head>	
+	<body>
+		<div id="quizContainer" class="container">
+			<div class="title">Arq Quiz</div>
+			<div id="question" class="question"> Quais variáveis usadas no código abaixo devem ser renomeadas para extinguir as dependências falsas? </div>
+			
+			<div style="margin-top: 40px"></div>
+			<div class="row">
+				<div class="col">
+					<ul id="sortable">
+						<li class="instrucao" id="1"> <b>1.</b> LD F6, 34(F2) </li>
+						<li class="instrucao" id="2"> <b>2.</b> LD F2, 45(F3)</li>
+						<li class="instrucao" id="3"> <b>3.</b> MULTD F0, F2, F4 </li>
+						<li class="instrucao" id="4"> <b>4.</b> SUBD F8, F6, F2 </li>
+						<li class="instrucao" id="5"> <b>5.</b> DIVD F10, F0, F6 </li>
+						<li class="instrucao" id="6"> <b>6.</b> ADD F6, F8, F2 </li>
+					</ul>
+				</div>
+				<div class="col">
+					<div class="label not-selectable" id="F0"> F0 </div>
+					<div class="label not-selectable" id="F2"> F2 </div>
+					<div class="label not-selectable" id="F4"> F4 </div>
+					<div class="label not-selectable" id="F8"> F8 </div>
+					<div class="label not-selectable" id="F6"> F6 </div>
+					<div class="label not-selectable" id="F10"> F10 </div>
+				</div>
+			</div>
+			
+			
+		</div>
+		<script type="text/javascript">
+			
+			var raw, e;
+			
+			var selected;
+			
+			$(function() {
+				selected = {};
+				selected["F0"] = false;
+				selected["F2"] = false;
+				selected["F4"] = false;
+				selected["F6"] = false;
+				selected["F8"] = false;
+				selected["F10"] = false;
+				
+				document.addEventListener('click', function (e) {
+					var target = e.target;
+					
+					if(target.id[0] == 'F') {
+						if(selected[target.id] == false) $("#" + target.id).css("color", "#228822");
+						else $("#" + target.id).css("color", "black");
+						selected[target.id] = !selected[target.id];
+					}
+				});
+			});
+			
+
+			function isCorrect() {
+				if(selected["F0"] == false && selected["F2"] == true && selected["F4"] == false && selected["F6"] == true && selected["F8"] == false && selected["F10"] == false) return "OK";
+				else return "WA";
+			}
+	
+		</script>
+	</body>
+</html>	
