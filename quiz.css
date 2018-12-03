@@ -4,7 +4,7 @@ body{
 }
 
 .container{
-	height: 700px;
+	min-height: 700px;
 	width: 1000px;
 	position: absolute;
 	top: 50%;

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		
+		<title>Quiz</title>
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Neucha" rel="stylesheet"> 
+		<!--<link href = "https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">-->
+		<link href="../quiz.css" rel="stylesheet">
+		<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript">
+		</script>
+	</head>	
+	<body>
+		<div id="quizContainer" class="container">
+			<div class="title">ArqQuiz</div>
+			<div id="question" class="question">
+				Considere a seguinte sequência de saídas para um desvio único. T significa que o desvio foi tomado e N significa que o desvio não foi tomado. Assuma que esse é o único desvio do programa. 
+				T T N T T T N N N N N T T T N
+				Assuma que tentamos prever a sequência utilizando uma tabela de história dos desvios com 2 bits. Quais desvios da sequência serão previstos de maneira errada? Complete a tabela com S se a previsão foi certa ou N se a previsão foi errada.
+			</div>
+			<center><table id="tabela" class="table table-striped" style="width:50%">
+				<thead>
+            		<tr>
+		                <th>Estado do previsor antes da decisão</th>
+		                <th>Decisão da instrução de desvio</th>
+		                <th>Previu errado?</th>
+		            </tr>
+        		</thead>
+        		<tbody>
+        			<tr>
+        				<td><center>T (1)</center></td>
+        				<td style="width: 200px"><center>T</center></td>
+        				<td><input type="text" id="row-1-yn" name="row-1-yn"></td>
+        			</tr>
+        			<tr>
+        				<td><input type="text" id="row-2-pred" name="row-2-pred"></td>
+        				<td><center>T</center></td>
+        				<td><input type="text" id="row-2-yn" name="row-2-yn"></td>
+        			</tr>
+        			<tr>
+        				<td><input type="text" id="row-3-pred" name="row-3-pred"></td>
+        				<td><center>T</center></td>
+        				<td><input type="text" id="row-3-yn" name="row-3-yn"></td>
+        			</tr>
+        			<tr>
+        				<td><input type="text" id="row-4-pred" name="row-4-pred"></td>
+        				<td><center>N</center></td>
+        				<td><input type="text" id="row-4-yn" name="row-4-yn"></td>
+        			</tr>
+        			<tr>
+        				<td><input type="text" id="row-5-pred" name="row-5-pred"></td>
+        				<td><center>T</center></td>
+        				<td><input type="text" id="row-5-yn" name="row-5-yn"></td>
+        			</tr>
+        			<tr>
+        				<td><input type="text" id="row-6-pred" name="row-6-pred"></td>
+        				<td><center>N</center></td>
+        				<td><input type="text" id="row-6-yn" name="row-6-yn"></td>
+        			</tr>
+        			<tr>
+        				<td><input type="text" id="row-7-pred" name="row-7-pred"></td>
+        				<td><center>T</center></td>
+        				<td><input type="text" id="row-7-yn" name="row-7-yn"></td>
+        			</tr>
+        			<tr>
+        				<td><input type="text" id="row-8-pred" name="row-8-pred"></td>
+        				<td><center>T</center></td>
+        				<td><input type="text" id="row-8-yn" name="row-8-yn"></td>
+        			</tr>
+        			<tr>
+        				<td><input type="text" id="row-9-pred" name="row-9-pred"></td>
+        				<td><center>T</center></td>
+        				<td><input type="text" id="row-9-yn" name="row-9-yn"></td>
+        			</tr>
+        			<tr>
+        				<td><input type="text" id="row-10-pred" name="row-10-pred"></td>
+        				<td><center>N</center></td>
+        				<td><input type="text" id="row-10-yn" name="row-10-yn"></td>
+        			</tr>
+        			<tr>
+        				<td><input type="text" id="row-11-pred" name="row-11-pred"></td>
+        				<td><center>N</center></td>
+        				<td><input type="text" id="row-11-yn" name="row-11-yn"></td>
+        			</tr>
+        			<tr>
+        				<td><input type="text" id="row-12-pred" name="row-12-pred"></td>
+        				<td><center>N</center></td>
+        				<td><input type="text" id="row-12-yn" name="row-12-yn"></td>
+        			</tr>
+        			<tr>
+        				<td><input type="text" id="row-13-pred" name="row-13-pred"></td>
+        				<td><center>T</center></td>
+        				<td><input type="text" id="row-13-yn" name="row-13-yn"></td>
+        			</tr>
+        			<tr>
+        				<td><input type="text" id="row-14-pred" name="row-14-pred"></td>
+        				<td><center>T</center></td>
+        				<td><input type="text" id="row-14-yn" name="row-14-yn"></td>
+        			</tr>
+        			<tr>
+        				<td><input type="text" id="row-15-pred" name="row-15-pred"></td>
+        				<td><center>N</center></td>
+        				<td><input type="text" id="row-15-yn" name="row-15-yn"></td>
+        			</tr>
+        		</tbody>
+        	</table></center>
+		</div>
+		<div id="result" class="container result" style="display:none;">
+		</div>
+		<script>
+			function isCorrect() {
+				if(document.getElementById('row-1-yn').value == "" || document.getElementById('row-2-yn').value == "" || document.getElementById('row-3-yn').value == "" || document.getElementById('row-4-yn').value == "" || document.getElementById('row-5-yn').value == "" || document.getElementById('row-6-yn').value == "" || document.getElementById('row-7-yn').value == "" || document.getElementById('row-8-yn').value == "" || document.getElementById('row-9-yn').value == "" || document.getElementById('row-10-yn').value == "" || document.getElementById('row-11-yn').value == "" || document.getElementById('row-12-yn').value == "" || document.getElementById('row-13-yn').value == "" || document.getElementById('row-14-yn').value == "" || document.getElementById('row-15-yn').value == "") return "Selecione uma opcao";
+				
+				if(document.getElementById('row-1-yn').value == "S" && document.getElementById('row-2-yn').value == "S" && document.getElementById('row-3-yn').value == "S" && document.getElementById('row-4-yn').value == "N" && document.getElementById('row-5-yn').value == "S" && document.getElementById('row-6-yn').value == "N" && document.getElementById('row-7-yn').value == "S" && document.getElementById('row-8-yn').value == "S" && document.getElementById('row-9-yn').value == "S" && document.getElementById('row-10-yn').value == "N" && document.getElementById('row-11-yn').value == "N" && document.getElementById('row-12-yn').value == "S" && document.getElementById('row-13-yn').value == "N" && document.getElementById('row-14-yn').value == "N" && document.getElementById('row-15-yn').value == "N") return "OK";
+				
+				else return "WA";
+			}
+		</script>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	</body>
+</html>	

@@ -1,3 +1,3 @@
 {
-	"explanation": "Sem o forwarding, acrescentamos 8 instruções nops, que totalizam em 8 ciclos de clock 'extras'. Já com o forwarding, acrescentamos apenas 2, resultando em uma economia de 6 ciclos de clock."
+	"explanation": "O PC (Program Counter) aponta para onde está a próxima instrução a ser executada, geralmente ele soma 4 e vai para a instrução seguinte do código. No entanto, quando há uma dependência de controle, a instrução do tipo branch pode fazer com que haja um desvio e o PC aponte para outro lugar do código."
 }
