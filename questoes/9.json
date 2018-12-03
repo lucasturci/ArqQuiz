@@ -1,0 +1,10 @@
+{
+	"question": 
+	"Qual a ordem de unidades utilizadas no pipeline:",
+	"option1": "Memória de Instruções => Banco de Registradores => ULA => Memória de Dados => Banco de Registradores",
+	"option2": "Memória de Dados => Banco de Registradores => ULA => Memória de Instruções => Banco de Registradores",
+	"option3": "Banco de Registradores => Memória de Dados => ULA => Memória de Instruções => Banco de Registradores",
+	"option4": "Memória de Instruções => Banco de Registradores => ULA => Banco de Registradores => Memória de Dados",
+	
+	"answer": "1"
+}
