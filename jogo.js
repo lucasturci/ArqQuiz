@@ -4,22 +4,23 @@ var frame = null;
 var butPular, butSubmeter;
 
 var questoes = [
-	{type: "questao", id: 1}, 
-	{type: "questao", id: 2}, 
-	{type: "questao", id: 1}, 
-	{type: "questao", id: 1}, 
-	{type: "questao", id: 2}, 
-	{type: "questao", id: 3}, 
-	{type: "questao", id: 4}, 
-	{type: "jogo", id: 1}, 
-	{type: "jogo", id: 2}, 
-	{type: "jogo", id: 3}, 
-	{type: "jogo", id: 4}, 
-	{type: "questao", id: 5},  
-	{type: "questao", id: 6}, 
-	{type: "jogo", id: 5},
-	{type: "jogo", id: 6},
-	{type: "jogo", id: 7}
+/*1*/	{type: "questao", id: 1}, 
+/*2*/	{type: "questao", id: 2}, 
+/*3*/	{type: "questao", id: 1}, 
+/*4*/	{type: "questao", id: 1}, 
+/*5*/	{type: "questao", id: 2}, 
+/*6*/	{type: "questao", id: 3}, 
+/*7*/	{type: "questao", id: 4}, 
+/*8*/	{type: "jogo", id: 1}, 
+/*9*/	{type: "jogo", id: 2}, 
+/*10*/	{type: "jogo", id: 3}, 
+/*11*/	{type: "jogo", id: 4}, 
+/*12*/	{type: "questao", id: 5},  
+/*13*/	{type: "questao", id: 6}, 
+/*14*/	{type: "jogo", id: 5},
+/*15*/	{type: "jogo", id: 6},
+/*16*/	{type: "jogo", id: 7},
+/*17*/	{type: "jogo", id: 8}
 ];
 
 
