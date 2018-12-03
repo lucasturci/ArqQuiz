@@ -24,6 +24,12 @@ function loadQuestion(question, curQuestion) {
 	opt2.textContent = q.option2;
 	opt3.textContent = q.option3;
 	opt4.textContent = q.option4;
+
+	if(q.imagem != null) {
+		var str = "<div style='width: 100%; margin-top: 10px;'><center> <img src='" + q.imagem + "'/></center> </div>"
+		console.log(str);
+		$("#question").html($("#question").html() + str);
+	}
 }
 
 function isCorrect() {
