@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		
+		<title>Jogo do Lucas </title>
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Neucha" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet"> 
+		
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link href="../quiz.css" rel="stylesheet">
+		
+		<!-- JQUERY -->
+		<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<style type="text/css">
+			
+			
+			.not-selectable {
+				user-select: none;
+				-moz-user-select: none;
+				-khtml-user-select: none;
+				-webkit-user-select: none;
+				-o-user-select: none;
+			}
+
+			li {
+				list-style-type: none;
+				font-family: 'Roboto Mono', monospace;
+			}
+
+			.instrucao {
+				margin-top: 10px;
+				margin-left: 10px;
+				padding-top: 5px;
+				padding-left: 10px;
+				width: 250px;
+				background-color: white;
+				border-radius: 10px;
+				height: 30px;
+				selectable: false;
+			}
+
+			table {
+				font-size: 11pt;
+			}
+
+			th {
+				border: 1px solid #666666;
+				padding: 5pt;
+				font-family: 'Roboto Mono', monospace;
+				text-align: center;
+			}
+			td {
+				border: 1px solid #666666;
+				padding-left: 10pt;
+				padding-right: 10pt;
+				padding-top: 5pt;
+				padding-bottom: 5pt;
+				font-family: 'Roboto Mono', monospace;
+				text-align: center;
+			}
+
+		</style>
+	</head>	
+	<body>
+		<div id="quizContainer" class="container">
+			<div class="title">Arq Quiz</div>
+			<div id="question" class="question"> Execute o algoritmo de scoreboard no programa abaixo e preencha os campos da tabela com os ciclos de clock em que os estágios são executados </div>
+			
+			<div style="margin-top: 40px"></div>
+			<div class="row">
+				<div class="col-5">
+					<ul id="sortable">
+						<li class="instrucao" id="1"> <b>1.</b> LD F6, 34(R2) </li>
+						<li class="instrucao" id="2"> <b>2.</b> LD F2, 45(R3)</li>
+						<li class="instrucao" id="3"> <b>3.</b> MULTD F0, F2, F4 </li>
+						<li class="instrucao" id="4"> <b>4.</b> SUBD F8, F6, F2 </li>
+						<li class="instrucao" id="5"> <b>5.</b> DIVD F10, F0, F6 </li>
+						<li class="instrucao" id="6"> <b>6.</b> ADD F6, F8, F2 </li>
+					</ul>
+				</div>
+				<div class="col-7">
+					<center>
+						<table style="margin-top: 10px;">
+							<tr>
+								<th> </th>
+								<th> ISSUE </th>
+								<th> READ OPERAND </th>
+								<th> EXECUTION COMPLETE </th>
+								<th> WRITE RESULT </th>
+							</tr>
+							<tr>
+								<td><b> 1 </b></td>
+								<td class = "entry">  </td>
+								<td class = "entry">  </td>
+								<td class = "entry">  </td>
+								<td class = "entry">  </td>
+							</tr>
+							<tr>
+								<td><b> 2 </b></td>
+								<td class = "entry">  </td>
+								<td class = "entry">  </td>
+								<td class = "entry">  </td>
+								<td class = "entry">  </td>
+							</tr>
+							<tr>
+								<td><b> 3 </b></td>
+								<td class = "entry">  </td>
+								<td class = "entry">  </td>
+								<td class = "entry">  </td>
+								<td class = "entry">  </td>
+							</tr>
+							<tr>
+								<td><b> 4 </b></td>
+								<td class = "entry">  </td>
+								<td class = "entry">  </td>
+								<td class = "entry">  </td>
+								<td class = "entry">  </td>
+							</tr>
+							<tr>
+								<td><b> 5 </b></td>
+								<td class = "entry">  </td>
+								<td class = "entry">  </td>
+								<td class = "entry">  </td>
+								<td class = "entry">  </td>
+							</tr>
+							<tr>
+								<td><b> 6 </b></td>
+								<td class = "entry">  </td>
+								<td class = "entry">  </td>
+								<td class = "entry">  </td>
+								<td class = "entry">  </td>
+							</tr>
+						</table>
+					</center>
+				</div>
+				<!-- <button onclick="isCorrect()"> debug </button> -->
+			</div>
+			
+			
+		</div>
+		<script type="text/javascript">
+
+			function edited(element, event) {
+				var str = element.firstChild.textContent;
+
+			}
+
+			var ans = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
+			
+			$(function() {
+				var tds = document.getElementsByClassName("entry");
+				for(var i = 0; i < tds.length; ++i) {
+					var el = tds[i];
+					el.setAttribute("contenteditable", "true");
+					el.setAttribute("onkeyup", "javascript:edited(this, event)");
+				}
+
+				$('.entry').keypress(function (e) {
+					var str = e.target.textContent;
+					str.trim();
+					if(str.length > 4) {
+						e.preventDefault();
+						return false;
+					}
+					if(e.keyCode == 8) return true;
+				    var regex = new RegExp("^[0-9]+$");
+				    var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+				    if (regex.test(str)) return true;
+
+				    e.preventDefault();
+				    return false;
+				});
+
+			});
+			
+
+			function isCorrect() {
+				var tds = document.getElementsByClassName("entry");
+				for(var i = 0; i < tds.length; ++i) {
+					if(el.textContent.trim().length == 0) return "Preencha todos os campos!";
+				}
+				for(var i = 0; i < tds.length; ++i) {
+					if(parseInt(el.textContent.trim()) != ans[i]) return "WA";
+				}
+				return "OK";
+			}
+	
+		</script>
+	</body>
+</html>	
