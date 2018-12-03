@@ -1,0 +1,10 @@
+{
+	"question": 
+	"Diversas arquiteturas modernas de computadores apresentam processadores que implementam o conceito de pipeline. Esse conceito está relacionado com",
+	"option1": "a percepção, por parte do usuário, de memória da máquina acima da memória realmente existente",
+	"option2": "o número de portas de Entrada e Saída destinadas à comunicação com equipamentos periféricos",
+	"option3": "segurança no acesso a informações em disco.",
+	"option4": "o paralelismo na execução de instruções de máquina",
+	
+	"answer": "4"
+}

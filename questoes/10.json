@@ -1,0 +1,10 @@
+{
+	"question": 
+	"Entre os tipos de arquiteturas RISC e CISC, qual delas é mais difícil de se implementar o pipeline:",
+	"option1": "RISC devido aos poucos formatos de instruções",
+	"option2": "CISC devido a demanda de um número grande de ciclos em sua execução",
+	"option3": "RISC devido a demanda de um número grande de ciclos em sua execução",
+	"option4": "CISC devido aos poucos modos de endereçamento",
+	
+	"answer": "2"
+}
