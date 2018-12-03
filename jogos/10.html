@@ -179,14 +179,14 @@
 				    return false;
 				});
 
-				if(localStorage.getItem("table")) {
-					$("#my_table").html(localStorage.getItem("table"));
+				if(sessionStorage.getItem("table")) {
+					$("#my_table").html(sessionStorage.getItem("table"));
 				}
 			});
 			
 
 			function isCorrect() {
-				localStorage.setItem("table", $("#my_table").html());
+				sessionStorage.setItem("table", $("#my_table").html());
 				var tds = document.getElementsByClassName("entry");
 				for(var i = 0; i < tds.length; ++i) {
 					var el = tds[i];
