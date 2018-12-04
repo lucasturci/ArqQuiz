@@ -7,5 +7,5 @@
 	"option4": "Memória de Instruções => Banco de Registradores => ULA => Banco de Registradores => Memória de Dados",
 	
 	"answer": "1",
-	"explanation": "As antidependências, também conhecidas como dependências do tipo Write After Read (WAR), são aquelas em que uma instrução escreve em um registrador após uma outra ter lido desse mesmo registrador.Assim, essas duas instruções são antidependências!"
+	"explanation": "Inicialmente se pesquisa pela instrução a ser executada por meio da Memória de Instruções. Em seguida, busca-se os registradores a serem usados no Banco de Registradores. A ULA é o próximo estágio. Nela, serão executadas operações aritmétcas relacionadas à instrução. Algumas operações irão escrever ou ler dados vindos da memória. Por isso, o Banco de Dados vem logo em seguida. Dependendo da operação, haverá a necessidade de armazenar os dados em um registrador, usando como estágio final o Banco de Registradores novamente."
 }

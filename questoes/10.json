@@ -7,5 +7,4 @@
 	"option4": "CISC devido aos poucos modos de endereçamento",
 	
 	"answer": "2",
-	"explanation": "As antidependências, também conhecidas como dependências do tipo Write After Read (WAR), são aquelas em que uma instrução escreve em um registrador após uma outra ter lido desse mesmo registrador.Assim, essas duas instruções são antidependências!"
-}
+	"explanation": "Por exclusão, sabemos que a arquitetura CISC possui muitos modos de endereçamento. Uma arquitetura que exige uma grande demanda de ciclos é o fator que torna difícil a implementação de várias tarefas ao mesmo tempo (conceito do pipeline). Por isso, sabendo que RISC possui instruções mais simples, a resposta certa para este enunciado é a CISC."

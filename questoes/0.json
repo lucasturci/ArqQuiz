@@ -6,5 +6,6 @@
 	"option3": "segurança no acesso a informações em disco.",
 	"option4": "o paralelismo na execução de instruções de máquina",
 	
-	"answer": "4"
+	"answer": "4",
+	"explanation":"O conceito de pipeline envolve a busca de uma ou mais instruções a serem executadas. Assim que uma instrução passa do primeiro estágio e parte para o segundo, a proxima instrução já ocupa o primeiro estágio. "
 }

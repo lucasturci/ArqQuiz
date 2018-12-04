@@ -1,11 +1,11 @@
 {
 	"question": 
-	"Maria possui 5 filhas e mora com todas em uma casa de um quarto, um banheiro, uma cozinha, uma sala e um quintal. Todo dia leva quase meia hora para que todas estejam prontas para ir à escola. A rotina da manhã de cada filha consiste em:\n1) Acordar e ir ao banheiro,\n2) Ir à cozinha e preparar o café,\n3) Ir à sala para tomar o café da manhã\n4) Ir ao quintal e esperar as outras irmãs ficarem prontas.\nTirando a primeira, Maria só acorda a outra filha quando a anterior estiver esperando no quintal. Essa forma não é eficiente. Esse processo seria mais eficiente se o conceito de paralelismo fosse utilizado. Das técnicas abaixo, qual delas apresenta uma solução mais coerente para o problema descrito:?",
+	"Maria possui 5 filhas e mora com todas em uma casa de um quarto, um banheiro, uma cozinha, uma sala e um quintal. Todo dia leva quase meia hora para que todas estejam prontas para ir à escola. A rotina da manhã de cada filha consiste em:\n1) Acordar e ir ao closet,\n2) Ir ao banheiro,\n3) Ir à cozinha para tomar o café da manhã\n4) Ir ao quintal e esperar as outras irmãs ficarem prontas.\nO banheiro, o closet e a cozinha são pequenos demais e assim apenas uma pessoa pode estar neles. Tirando a primeira, Maria só acorda a outra filha quando a anterior estiver esperando no quintal. Essa forma não é eficiente. Esse processo seria mais eficiente se o conceito de paralelismo fosse utilizado. Considerando que  Das técnicas abaixo, qual delas apresenta uma solução mais coerente para o problema descrito:?",
 	"option1": "Pipeline",
 	"option2": "Sequencial",
 	"option3": "Superescalar",
 	"option4": "Paralelismo de Threads",
 	
 	"answer": "1",
-	"explanation": "oi te amo"
+	"explanation": "A melhor técnica é a do pipeline uma vez que pelos quartos serem pequenos, o superescalar não é possível de ser adotado. Seguindo o método de pipeline, mais de uma filha estará acordada realizando tarefas diferentes tornando a rotina de manhã mais eficiente e rápida."
 }

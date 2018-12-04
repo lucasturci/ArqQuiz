@@ -4,27 +4,27 @@ var frame = null;
 var butPular, butSubmeter;
 
 var questoes = [
-/*1*/	{type: "questao", id: 1},
-/*2*/	{type: "questao", id: 2},
-/*3*/	{type: "questao", id: 1},
-/*4*/	{type: "questao", id: 1},
-/*5*/	{type: "questao", id: 2},
-/*6*/	{type: "questao", id: 3},
-/*7*/	{type: "questao", id: 4},
-/*8*/	{type: "jogo", id: 1},
-/*9*/	{type: "jogo", id: 2},
-/*10*/	{type: "jogo", id: 3},
-/*11*/	{type: "jogo", id: 4},
-/*12*/	{type: "questao", id: 5},  
-/*13*/	{type: "questao", id: 6}, 
-/*14*/	{type: "jogo", id: 5},
-/*15*/	{type: "jogo", id: 6},
-/*15*/	{type: "questao", id: 8},
-/*16*/	{type: "jogo", id: 7},
-/*17*/	{type: "jogo", id: 8},
-/*18*/  {type: "jogo", id: 9},
-/*19*/  {type: "jogo", id: 10},
-/*20*/  {type: "questao", id: 11}
+/*1*/	{type: "questao", id: 0},
+/*2*/	{type: "questao", id: 1},
+/*3*/	{type: "jogo", id: 9},
+/*4*/	{type: "questao", id: 9},
+/*5*/	{type: "questao", id: 10},
+/*6*/	{type: "questao", id: 2},
+/*7*/	{type: "questao", id: 3},
+/*8*/	{type: "questao", id: 4},
+/*9*/	{type: "jogo", id: 1},
+/*10*/	{type: "jogo", id: 2},
+/*11*/	{type: "jogo", id: 3},
+/*12*/	{type: "jogo", id: 4},
+/*13*/	{type: "questao", id: 5},  
+/*14*/	{type: "questao", id: 6}, 
+/*15*/	{type: "jogo", id: 5},
+/*16*/	{type: "jogo", id: 6},
+/*17*/	{type: "questao", id: 8},
+/*18*/	{type: "jogo", id: 7},
+/*19*/	{type: "jogo", id: 8},
+/*20*/  {type: "jogo", id: 10},
+/*21*/  {type: "questao", id: 11}
 ];
 
 var gifs = [
