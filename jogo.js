@@ -26,6 +26,29 @@ var questoes = [
 /*20*/  {type: "questao", id: 11}
 ];
 
+var gifs = [
+/*1*/	"images/gif1.gif",
+/*2*/	"images/gif2.gif",
+/*3*/	"images/gif3.gif",
+/*4*/	"images/gif4.gif",
+/*5*/	"images/gif5.gif",
+/*6*/	"images/gif6.gif",
+/*7*/	"images/gif7.gif",
+/*8*/	"images/gif8.gif",
+/*9*/	"images/gif9.gif",
+/*10*/	"images/gif10.gif",
+/*11*/	"images/gif11.gif",
+/*12*/	"images/gif12.gif",
+/*13*/	"images/gif1.gif",
+/*14*/	"images/gif2.gif",
+/*15*/	"images/gif3.gif",
+/*16*/	"images/gif4.gif",
+/*17*/	"images/gif5.gif",
+/*18*/	"images/gif6.gif",
+/*19*/	"images/gif7.gif",
+/*20*/	"images/gif8.gif",
+];
+
 
 function loadFase() {
 	var fase = questoes[curQuestion];
@@ -44,8 +67,9 @@ $(function() {
 
 function frameLoaded() {	
 	var fase = questoes[curQuestion];
-	
-	if(fase.type == "questao") frame.contentWindow.loadQuestion(fase.id.toString(), curQuestion); // loada a questao do quiz
+	console.log($("#frame")[0].attributes["src"]);
+	if($("#frame").attr("src") == "quiz.html") frame.contentWindow.loadQuestion(fase.id.toString(), curQuestion); // loada a questao do quiz
+	if($("#frame").attr("src") == "./wrong/wrong.html") frame.contentWindow.loadGif(gifs[curQuestion]);
 }
 
 
@@ -79,7 +103,7 @@ function submeter() {
 		console.log("Errou");
 		$("#submit_button").css("visibility", "hidden");
 		$("#skip_button").css("visibility", "hidden");
-		$("#frame").attr("src", "./wrong/wrong" + (curQuestion+1).toString() + ".html");
+		$("#frame").attr("src", "./wrong/wrong.html");
 	} else if(ret == "Selecione uma opcao") { 
 		alert("Nenhuma opção selecionada")
 	} else {
