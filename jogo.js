@@ -39,14 +39,14 @@ var gifs = [
 /*10*/	"images/gif10.gif",
 /*11*/	"images/gif11.gif",
 /*12*/	"images/gif12.gif",
-/*13*/	"images/gif1.gif",
-/*14*/	"images/gif2.gif",
-/*15*/	"images/gif3.gif",
-/*16*/	"images/gif4.gif",
-/*17*/	"images/gif5.gif",
-/*18*/	"images/gif6.gif",
-/*19*/	"images/gif7.gif",
-/*20*/	"images/gif8.gif",
+/*13*/	"images/gif13.gif",
+/*14*/	"images/gif1.gif",
+/*15*/	"images/gif2.gif",
+/*16*/	"images/gif3.gif",
+/*17*/	"images/gif4.gif",
+/*18*/	"images/gif5.gif",
+/*19*/	"images/gif6.gif",
+/*20*/	"images/gif6.gif",
 ];
 
 
