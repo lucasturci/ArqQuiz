@@ -1,0 +1,3 @@
+{
+	"explanation": "Nesse caso, nenhum problema é causado pelas dependências falsas!\nAs dependências falsas só causam problemas quando há escalonamento de instruções, isto é, no caso do código ser executado fora de ordem.\nCaso o código seja executado da maneira como está não é nessário atentar-se às dependências falsas."
+}

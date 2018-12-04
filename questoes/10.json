@@ -6,5 +6,6 @@
 	"option3": "RISC devido a demanda de um número grande de ciclos em sua execução",
 	"option4": "CISC devido aos poucos modos de endereçamento",
 	
-	"answer": "2"
+	"answer": "2",
+	"explanation": "As antidependências, também conhecidas como dependências do tipo Write After Read (WAR), são aquelas em que uma instrução escreve em um registrador após uma outra ter lido desse mesmo registrador.Assim, essas duas instruções são antidependências!"
 }

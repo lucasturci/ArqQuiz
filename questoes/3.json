@@ -6,5 +6,6 @@
 	"option3": "4 e 5, respectivamente",
 	"option4": "5 e 4, respectivamente",
 	
-	"answer": "2"
+	"answer": "2",
+	"explanation": "Qualquer hazard é, também, uma dependência verdadeira.\nE, nesse caso, temos 4 hazards! São eles:\n($a0)I3 -> I4\n($t2)I0 -> I1\n($t5)I2 -> I3\n($t9)I1 -> I3"
 }

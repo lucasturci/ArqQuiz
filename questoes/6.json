@@ -6,5 +6,6 @@
 	"option3": "Conteúdo dos registradores",
 	"option4": "ULA",
 	
-	"answer": "2"
+	"answer": "2",
+	"explanation": "O PC (Program Counter) aponta para onde está a próxima instrução a ser executada, geralmente ele soma 4 e vai para a instrução seguinte do código. No entanto, quando há uma dependência de controle, a instrução do tipo branch pode fazer com que haja um desvio e o PC aponte para outro lugar do código."
 }

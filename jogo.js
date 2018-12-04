@@ -4,17 +4,17 @@ var frame = null;
 var butPular, butSubmeter;
 
 var questoes = [
-/*1*/	{type: "questao", id: 1}, 
-/*2*/	{type: "questao", id: 2}, 
-/*3*/	{type: "questao", id: 1}, 
-/*4*/	{type: "questao", id: 1}, 
-/*5*/	{type: "questao", id: 2}, 
-/*6*/	{type: "questao", id: 3}, 
-/*7*/	{type: "questao", id: 4}, 
-/*8*/	{type: "jogo", id: 1}, 
-/*9*/	{type: "jogo", id: 2}, 
-/*10*/	{type: "jogo", id: 3}, 
-/*11*/	{type: "jogo", id: 4}, 
+/*1*/	{type: "questao", id: 1},
+/*2*/	{type: "questao", id: 2},
+/*3*/	{type: "questao", id: 1},
+/*4*/	{type: "questao", id: 1},
+/*5*/	{type: "questao", id: 2},
+/*6*/	{type: "questao", id: 3},
+/*7*/	{type: "questao", id: 4},
+/*8*/	{type: "jogo", id: 1},
+/*9*/	{type: "jogo", id: 2},
+/*10*/	{type: "jogo", id: 3},
+/*11*/	{type: "jogo", id: 4},
 /*12*/	{type: "questao", id: 5},  
 /*13*/	{type: "questao", id: 6}, 
 /*14*/	{type: "jogo", id: 5},
@@ -114,15 +114,22 @@ function submeter() {
 function openModal(curQuestion, acertou) {
 	document.getElementById("frame").hidden = "hidden";
 
-	var request = new XMLHttpRequest();
-	request.open("GET", "respostas/" + curQuestion + ".json", false);
-	request.send(null);
-	q = JSON.parse(request.responseText);
+	var fase = questoes[curQuestion-1];
+	var exp;
+	console.log(fase.type + " " + fase.id);
+	if(fase.type == "jogo") {
+		var request = new XMLHttpRequest();
+		request.open("GET", "jogos/exp" + fase.id + ".json", false);
+		request.send(null);
+		exp = JSON.parse(request.responseText);
+		console.log("Eh um jogo");
+	} else exp = frame.contentWindow.q;
+	console.log(exp);
 
 	if (acertou) document.getElementById("title").textContent = "Parabéns!! Você acaba de ganhar mais 10 pontos =D\nConfere aqui embaixo se seu raciocínio foi igual ao nosso!";
 	else document.getElementById("title").textContent = "Poxa, que pena que você desistiu dessa pergunta =(\nMas então dá uma olhadinha aqui na nossa explicação pra ela!";
 
-	document.getElementById("modal-body").textContent = q.explanation;
+	document.getElementById("modal-body").textContent = exp.explanation;
 
 	document.getElementById("modal").hidden = "";
 	document.getElementById("submit_button").hidden = "hidden";

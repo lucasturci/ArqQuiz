@@ -7,5 +7,6 @@
 	"option4": "As dependências do tipo RAW (Read after Write) e WAR (Write after Read)",
 	
 	"answer": "1",
-	"imagem": "imagens/11-scoreboard.png"
+	"imagem": "imagens/11-scoreboard.png",
+	"explanation": "As antidependências, também conhecidas como dependências do tipo Write After Read (WAR), são aquelas em que uma instrução escreve em um registrador após uma outra ter lido desse mesmo registrador.Assim, essas duas instruções são antidependências!"
 }
