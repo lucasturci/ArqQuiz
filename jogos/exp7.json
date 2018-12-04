@@ -1,3 +1,3 @@
 {
-	"explanation": "Sem o forwarding, acrescentamos 8 instruções nops, que totalizam em 8 ciclos de clock 'extras'. Já com o forwarding, acrescentamos apenas 2, resultando em uma economia de 6 ciclos de clock."
+	"explanation": "As antidependências são dos registradores F2 e F6 - O F2 está escondido do ladinho da pergunta ;) .\n Você pode renomear esses registradores da seguinte forma:\n 1. LD S, 34(F2)\n 2. LD T, 45(F3)\n 3. MULTD F0, T, F4\n 4. SUBD F8, S, T\n 5. DIVD F10, F0, S\n 6. ADD F6, F8, T\n"
 }

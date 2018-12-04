@@ -1,12 +1,12 @@
 {
 	"question": 
 	"Que tipo de dependências a condição da etapa Issue do algoritmo de Scoreboard busca solucionar?",
-	"option1": "As antidependências",
-	"option2": "As dependências de controle",
-	"option3": "As dependências do tipo RAW (Read after Write) e WAW (Write after Write)",
-	"option4": "As dependências do tipo RAW (Read after Write) e WAR (Write after Read)",
+	"option1": "As dependências física e WAW (Write After Write)",
+	"option2": "As antidependências",
+	"option3": "As dependências de controle",
+	"option4": "As dependências WAW (Write After Write) e RAW (Read After Write)",
 	
 	"answer": "1",
 	"imagem": "imagens/11-scoreboard.png",
-	"explanation": "As antidependências, também conhecidas como dependências do tipo Write After Read (WAR), são aquelas em que uma instrução escreve em um registrador após uma outra ter lido desse mesmo registrador.Assim, essas duas instruções são antidependências!"
+	"explanation": "'Not Busy [FU]' previne as dependências físicas, e 'Not Result [D]' previne a dependência WAW"
 }

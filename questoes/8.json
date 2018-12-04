@@ -7,5 +7,5 @@
 	"option4": "Arquitetura que implementa o algorito de Tomasulo",
 	
 	"answer": "3",
-	"explanation": "Nesse caso, nenhum problema é causado pelas dependências falsas!\nAs dependências falsas só causam problemas quando há escalonamento de instruções, isto é, no caso do código ser executado fora de ordem.\nCaso o código seja executado da maneira como está não é nessário atentar-se às dependências falsas."
+	"explanation": "O despacho múltiplo pode acontecer em arquiteturas superescalares ou nas VLIW, mas as arquiteturas superescalares podem implementar um despacho dinâmico. A VLIW, no entanto, implementa um despacho estático, pois as instruções despachadas simultaneamente são pré-escolhidas pelo compilador"
 }
