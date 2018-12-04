@@ -7,6 +7,7 @@
 		<!-- Google Fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Neucha" rel="stylesheet"> 
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC" rel="stylesheet"> 
 		
 
 		<!-- Bootstrap CSS -->
@@ -28,12 +29,9 @@
 				-o-user-select: none;
 			}
 
-			li {
+			.instrucao {
 				list-style-type: none;
 				font-family: 'Roboto Mono', monospace;
-			}
-
-			.instrucao {
 				margin-top: 10px;
 				margin-left: 10px;
 				padding-top: 5px;
@@ -63,6 +61,13 @@
 				padding-bottom: 5pt;
 				font-family: 'Roboto Mono', monospace;
 				text-align: center;
+			}
+
+			#noteeadote {
+				width: 100%;
+				padding: 25pt;
+				font-family: 'Noto Sans SC', sans-serif;
+				font-size: 12pt;
 			}
 
 		</style>
@@ -140,6 +145,32 @@
 					</center>
 				</div>
 				<!-- <button onclick="isCorrect()"> debug </button> -->
+				<div id="noteeadote">
+					<p style="font-size: 14pt;"> <i> Note e Adote </i> </p>
+					<p>Considere que o processador possue:</p>
+					<div class = "row">
+						<div class = "col">
+							<ul>
+								<li> 1 unidade de operação de inteiros </li>
+								<li> 2 unidades de multiplicação de ponto flutuante </li>
+								<li> 1 unidade de adição de ponto flutuante </li>
+								<li> 1 unidade de divisão de ponto flutuante </li>
+							</ul>
+
+						</div>
+
+						<div class = "col">
+							<ul>
+								<li> Latência de 1 ciclo para operação inteira </li>
+								<li> Latência de 2 ciclos para adição/subtração </li>
+								<li> Latência de 10 ciclos para multiplicação </li>
+								<li> Latência de 40 ciclos para divisão </li>
+							</ul>
+
+						</div>
+					</div> 
+				</div>
+
 			</div>
 			
 			
@@ -151,7 +182,7 @@
 
 			}
 
-			var ans = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
+			var ans = [1, 2, 3, 4, 5, 6, 7, 8, 6, 9, 19, 20, 7, 9, 11, 12, 8, 21, 61, 62, 13, 14, 16, 22]; // solution by carolina arenas
 			
 			$(function() {
 				var tds = document.getElementsByClassName("entry");
@@ -162,13 +193,14 @@
 				}
 
 				$('.entry').keypress(function (e) {
+					if(e.keyCode == 8) return true;
 					var s = e.target.textContent;
 					s.trim();
 					if(s.length > 4) {
 						e.preventDefault();
 						return false;
 					}
-					if(e.keyCode == 8) return true;
+					
 				    var regex = new RegExp("^[0-9]+$");
 				    var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
 				    if (regex.test(str)) {
