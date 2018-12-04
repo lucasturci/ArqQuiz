@@ -1,3 +1,0 @@
-{
-	"explanation": "A máquina de estados com 2 bits para decisão faz uma previsão dinâmica do desvio baseando-se no seu comportamento no passado. Se a máquina está no estado Predict Taken 1, ela precisa errar duas vezes (não tomar o desvio) para mudar para Predict Not Taken. O mesmo acontece quando ela está no Predict Not Taken 1."
-}

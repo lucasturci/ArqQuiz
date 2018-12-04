@@ -1,3 +1,0 @@
-{
-	"explanation": "Sem o forwarding, acrescentamos 8 instruções nops, que totalizam em 8 ciclos de clock 'extras'. Já com o forwarding, acrescentamos apenas 2, resultando em uma economia de 6 ciclos de clock."
-}

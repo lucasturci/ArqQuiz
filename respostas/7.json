@@ -1,3 +1,0 @@
-{
-	"explanation": "As antidependências, também conhecidas como dependências do tipo Write After Read (WAR), são aquelas em que uma instrução escreve em um registrador após uma outra ter lido desse mesmo registrador.Assim, essas duas instruções são antidependências!"
-}
