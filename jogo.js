@@ -19,6 +19,7 @@ var questoes = [
 /*13*/	{type: "questao", id: 6}, 
 /*14*/	{type: "jogo", id: 5},
 /*15*/	{type: "jogo", id: 6},
+/*15*/	{type: "questao", id: 8},
 /*16*/	{type: "jogo", id: 7},
 /*17*/	{type: "jogo", id: 8},
 /*18*/  {type: "jogo", id: 9},
