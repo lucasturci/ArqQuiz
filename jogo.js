@@ -130,7 +130,7 @@ function openModal(curQuestion, acertou) {
 	if (acertou) document.getElementById("title").textContent = "Parabéns!! Você acaba de ganhar mais 10 pontos =D\nConfere aqui embaixo se seu raciocínio foi igual ao nosso!";
 	else document.getElementById("title").textContent = "Poxa, que pena que você desistiu dessa pergunta =(\nMas então dá uma olhadinha aqui na nossa explicação pra ela!";
 
-	document.getElementById("modal-body").textContent = exp.explanation;
+	document.getElementById("modal-body").innerHTML = exp.explanation;
 
 	document.getElementById("modal").hidden = "";
 	document.getElementById("submit_button").hidden = "hidden";
