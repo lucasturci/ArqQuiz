@@ -1,28 +1,28 @@
-var curQuestion = 14;
+var curQuestion = 19;
 var score = 0;
 var frame = null;
 var butPular, butSubmeter;
 
 var questoes = [
-/*1*/	{type: "questao", id: 0},
+/*1*/	{type: "questao", id: 0}, //pipeline basico
 /*2*/	{type: "questao", id: 1},
 /*3*/	{type: "jogo", id: 9},
 /*4*/	{type: "questao", id: 9},
 /*5*/  	{type: "questao", id: 10},
-/*6*/	{type: "questao", id: 2},
+/*6*/	{type: "questao", id: 2}, //dep de dados
 /*7*/	{type: "questao", id: 3},
 /*8*/	{type: "questao", id: 4},
 /*9*/	{type: "jogo", id: 1},
 /*10*/	{type: "jogo", id: 2},
 /*11*/	{type: "jogo", id: 3},
 /*12*/	{type: "jogo", id: 4},
-/*13*/	{type: "questao", id: 5},  
+/*13*/	{type: "questao", id: 5},  //dep de controle
 /*14*/	{type: "questao", id: 6}, 
 /*15*/	{type: "jogo", id: 5},
-/*16*/	{type: "jogo", id: 6},
-/*17*/	{type: "questao", id: 8},
-/*18*/	{type: "jogo", id: 7},
-/*19*/	{type: "jogo", id: 8},
+/*16*/	{type: "jogo", id: 8}, //dep de controle
+/*17*/	{type: "jogo", id: 6}, //escalonamento
+/*18*/	{type: "questao", id: 8},
+/*19*/	{type: "jogo", id: 7},
 /*20*/  {type: "jogo", id: 10},
 /*21*/  {type: "questao", id: 11}
 ];
@@ -47,7 +47,8 @@ var gifs = [
 /*17*/	"images/gif4.gif",
 /*18*/	"images/gif5.gif",
 /*19*/	"images/gif6.gif",
-/*20*/	"images/gif6.gif",
+/*20*/	"images/gif7.gif",
+/*21*/	"images/gif8.gif"
 ];
 
 
