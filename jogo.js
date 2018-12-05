@@ -152,6 +152,11 @@ function closeModal() {
 } 
 
 function quitGame() {
-	document.body.innerHTML = '';
-	alert("Pontuação final: " + score);
+	//document.body.innerHTML = '';
+	document.getElementById("submit_button").hidden = "hidden";
+	document.getElementById("skip_button").hidden = "hidden";
+	$("#frame").attr("src", "./end.html");
+	frame.contentWindow.loadScore(score);
+	document.getElementById("scorefinal").innerHTML = score; 
+	//alert("Pontuação final: " + score);
 }
