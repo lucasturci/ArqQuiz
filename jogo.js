@@ -1,4 +1,4 @@
-var curQuestion = 20;
+var curQuestion = 0;
 var score = 0;
 var pts = 0;
 var frame = null;
@@ -20,7 +20,7 @@ var questoes = [
 /*13*/	{type: "questao", id: 5},  //dep de controle
 /*14*/	{type: "questao", id: 6}, 
 /*15*/	{type: "jogo", id: 5},
-/*16*/	{type: "jogo", id: 8}, //dep de controle
+/*16*/	{type: "jogo", id: 8}, 
 /*17*/	{type: "jogo", id: 6}, //escalonamento
 /*18*/	{type: "questao", id: 8},
 /*19*/	{type: "jogo", id: 7},
@@ -96,6 +96,7 @@ function submeter() {
 	if(ret == "OK") { //passa de fase
 		curQuestion++;
 		score += pts;
+		document.getElementById("cur_score").textContent = "PONTUAÇÃO ATUAL: " + score;
 		openModal(curQuestion, 1);
 //		loadFase();
 	} else if(ret == "WA") { 
@@ -108,7 +109,6 @@ function submeter() {
 	} else {
 		alert(ret);
 	}
-	console.log("aquiiiiiii")
 	if (pts > 1) pts -= 1;
 	console.log(score)
 }
