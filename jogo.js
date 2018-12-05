@@ -8,7 +8,7 @@ var questoes = [
 /*2*/	{type: "questao", id: 1},
 /*3*/	{type: "jogo", id: 9},
 /*4*/	{type: "questao", id: 9},
-/*5*/	{type: "questao", id: 10},
+/*5*/  	{type: "questao", id: 10},
 /*6*/	{type: "questao", id: 2},
 /*7*/	{type: "questao", id: 3},
 /*8*/	{type: "questao", id: 4},
