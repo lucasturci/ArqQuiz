@@ -60,6 +60,7 @@ function loadFase() {
 	console.log(fase.type);
 	if(fase.type == "questao") $("#frame").attr("src", "quiz.html");
 	else $("#frame").attr("src", "jogos/" + fase.id.toString() + ".html");
+	sessionStorage.clear(); // remove os dados guardados sobre campos
 }
 
 $(function() {
@@ -67,6 +68,9 @@ $(function() {
 	frame.onload = frameLoaded;
 	pts = 10;
 	loadFase();
+	/* Esse pedaco de codigo supostamente eh pra loadar a imagem do gif e ja deixar na cache do navegador, otimizando o carregamento depois*/
+	var img = new Image();
+	img.src = gifs[curQuestion]; 
 });
 
 function frameLoaded() {	
