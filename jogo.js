@@ -164,6 +164,7 @@ function quitGame() {
 	document.getElementById('frame').onload = updateScore;
 	
 }
+
 function updateScore() {
 	document.getElementById("frame").contentWindow.document.getElementById("final_score").textContent = score;
 }
