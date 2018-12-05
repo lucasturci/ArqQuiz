@@ -1,4 +1,4 @@
-var curQuestion = 0;
+var curQuestion = 20;
 var score = 0;
 var pts = 0;
 var frame = null;
@@ -145,6 +145,13 @@ function closeModal() {
 	pts = 10;
 	document.getElementById("submit_button").hidden = "";
 	document.getElementById("skip_button").hidden = "";
-	if (curQuestion == 21) console.log(score);
+	if (curQuestion == 21) {
+		quitGame();
+	}
 	else loadFase();
 } 
+
+function quitGame() {
+	document.body.innerHTML = '';
+	alert("Pontuação final: " + score);
+}
