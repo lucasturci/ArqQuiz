@@ -1,5 +1,6 @@
-var curQuestion = 19;
+var curQuestion = 0;
 var score = 0;
+var pts = 0;
 var frame = null;
 var butPular, butSubmeter;
 
@@ -64,6 +65,7 @@ function loadFase() {
 $(function() {
 	frame = document.getElementById("frame");
 	frame.onload = frameLoaded;
+	pts = 10;
 	loadFase();
 });
 
@@ -93,7 +95,7 @@ function submeter() {
 
 	if(ret == "OK") { //passa de fase
 		curQuestion++;
-		score += 10;
+		score += pts;
 		openModal(curQuestion, 1);
 //		loadFase();
 	} else if(ret == "WA") { 
@@ -106,6 +108,9 @@ function submeter() {
 	} else {
 		alert(ret);
 	}
+	console.log("aquiiiiiii")
+	if (pts > 1) pts -= 1;
+	console.log(score)
 }
 
 function openModal(curQuestion, acertou) {
@@ -123,7 +128,7 @@ function openModal(curQuestion, acertou) {
 	} else exp = frame.contentWindow.q;
 	console.log(exp);
 
-	if (acertou) document.getElementById("title").textContent = "Parabéns!! Você acaba de ganhar mais 10 pontos =D\nConfere aqui embaixo se seu raciocínio foi igual ao nosso!";
+	if (acertou) document.getElementById("title").textContent = "Parabéns!! Você acaba de ganhar mais " + pts + " pontos =D\nConfere aqui embaixo se seu raciocínio foi igual ao nosso!";
 	else document.getElementById("title").textContent = "Poxa, que pena que você desistiu dessa pergunta =(\nMas então dá uma olhadinha aqui na nossa explicação pra ela!";
 
 	document.getElementById("modal-body").innerHTML = exp.explanation;
@@ -137,7 +142,9 @@ function closeModal() {
 	document.getElementById("frame").hidden = "";
 	document.getElementById("modal").hidden = "hidden";
 
+	pts = 10;
 	document.getElementById("submit_button").hidden = "";
 	document.getElementById("skip_button").hidden = "";
-	loadFase();
+	if (curQuestion == 21) console.log(score);
+	else loadFase();
 } 
