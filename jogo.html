@@ -60,6 +60,21 @@
 				margin-right: 20px;
 				font-size: 15pt;
 			}
+
+			#cur_score {
+				color: white;
+				border: none;
+				outline: none;
+				background: #70a9a1;
+				width: 250px;
+				height: 70%;
+				border-radius: 20px;
+				float: left;
+				margin-top: 10px;
+				margin-right: 20px;
+				font-size: 15pt;
+				padding-top: 20px;
+			}
 			
 			.button:hover{
 				background:  #40798C;
@@ -97,6 +112,9 @@
 			</div>
 
 			<div id = "submit">
+				<div id = "cur_score">
+					PONTUAÇÃO ATUAL: 0
+				</div>
 				<button id="quit_button" class = "button" onclick="quitGame()" > SAIR </button>
 				<button id="submit_button" class = "button" onclick="submeter()" > SUBMETER </button>
 				<button id="skip_button" class = "button" onclick="pular()" > PULAR </button>
