@@ -96,7 +96,7 @@ function submeter() {
 	if(ret == "OK") { //passa de fase
 		curQuestion++;
 		score += pts;
-		document.getElementById("cur_score").textContent = "PONTUAÇÃO ATUAL: " + score;
+		document.getElementById("cur_score").textContent = score;
 		openModal(curQuestion, 1);
 //		loadFase();
 	} else if(ret == "WA") { 
@@ -155,8 +155,15 @@ function quitGame() {
 	//document.body.innerHTML = '';
 	document.getElementById("submit_button").hidden = "hidden";
 	document.getElementById("skip_button").hidden = "hidden";
+	document.getElementById("score").hidden = "hidden";
+	document.getElementById("quit_button").hidden = "hidden";
+	document.getElementById("back_button").hidden = "";
+
 	$("#frame").attr("src", "./end.html");
-	frame.contentWindow.loadScore(score);
-	document.getElementById("scorefinal").innerHTML = score; 
-	//alert("Pontuação final: " + score);
+	
+	document.getElementById('frame').onload = updateScore;
+	
+}
+function updateScore() {
+	document.getElementById("frame").contentWindow.document.getElementById("final_score").textContent = score;
 }

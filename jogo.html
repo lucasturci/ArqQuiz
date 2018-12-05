@@ -61,7 +61,7 @@
 				font-size: 15pt;
 			}
 
-			#cur_score {
+			#score {
 				color: white;
 				border: none;
 				outline: none;
@@ -73,7 +73,7 @@
 				margin-top: 10px;
 				margin-right: 20px;
 				font-size: 15pt;
-				padding-top: 20px;
+				padding-top: 15px;
 			}
 			
 			.button:hover{
@@ -94,6 +94,10 @@
 	</head>
 	<body>
 
+		<button id="back_button" class="button" onclick="location.href='./index.html'" hidden="hidden">
+			VOLTAR
+		</button>
+
 		<center>
 			<iframe id = "frame" src="quiz.html"></iframe>
 
@@ -112,8 +116,8 @@
 			</div>
 
 			<div id = "submit">
-				<div id = "cur_score">
-					PONTUAÇÃO ATUAL: 0
+				<div id="score">
+					PONTUAÇÃO ATUAL: <span id = "cur_score">0</span>
 				</div>
 				<button id="quit_button" class = "button" onclick="quitGame()" > SAIR </button>
 				<button id="submit_button" class = "button" onclick="submeter()" > SUBMETER </button>
