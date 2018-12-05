@@ -19,7 +19,7 @@ function loadQuestion(question, curQuestion) {
 	request.send(null);
 	q = JSON.parse(request.responseText);
 	console.log(q);
-	questionEl.textContent = curQuestion + '. ' + q.question;
+	questionEl.textContent = (curQuestion+1) + '. ' + q.question;
 	opt1.textContent = q.option1;
 	opt2.textContent = q.option2;
 	opt3.textContent = q.option3;

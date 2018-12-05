@@ -1,4 +1,4 @@
-var curQuestion = 0;
+var curQuestion = 14;
 var score = 0;
 var frame = null;
 var butPular, butSubmeter;
@@ -71,11 +71,6 @@ function frameLoaded() {
 	console.log($("#frame")[0].attributes["src"]);
 	if($("#frame").attr("src") == "quiz.html") frame.contentWindow.loadQuestion(fase.id.toString(), curQuestion); // loada a questao do quiz
 	if($("#frame").attr("src") == "./wrong/wrong.html") frame.contentWindow.loadGif(gifs[curQuestion]);
-}
-
-
-function nextQuestion() {
-	curQuestion++;
 }
 
 function tryAgain() {
